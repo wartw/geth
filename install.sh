@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /root
-cat << EOF >  /etc/yum.repos.d/xrdp.repo
+cat /etc/yum.repos.d/xrdp.repo <<EOF  
 [xrdp]
 
 name=xrdp
