@@ -12,6 +12,11 @@ enabled=1
 gpgcheck=0
 EOF 
 yum install xrdp -y
+chcon -t bin_t /usr/sbin/xrdp　　
+
+chcon -t bin_t /usr/sbin/xrdp-sesman
+systemctl start xrdp.service
+systemctl enable xrdp.service
 yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
 systemctl set-default graphical.target
 yum update -y && yum install git wget bzip2 vim gcc-c++ ntp epel-release nodejs cmake screen tmux -y
